@@ -3,10 +3,10 @@ def biology(symbols: str):
     itog_string = ""
     for i in symbols:
         if i not in storage:
-            storage[i] = 0
-        storage[i] += 1
-    for key, value in storage.items():
-        itog_string += f"{key}{value}"
-    return itog_string
-
-print(biology("aaaabbc"))
+            storage[i] = 1
+        if i == storage[i]:
+            storage[i] += 1
+        print(storage)
+    
+    return storage
+print(biology("aaaabbсaa"))

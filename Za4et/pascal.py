@@ -4,11 +4,10 @@
 '''
 
 def getRow(rowIndex):
-    row = [1]
+    current_row = [1]
     for _ in range(rowIndex):
-        row = [x + y for x, y in zip([0]+row, row+[0])] # 1 iteration => [0,1] [1,0] -> (0,1) (1,0)
-        print(row)
-    return row
+        current_row = [ left + right for left, right in zip([0] + current_row, current_row + [0])]
+    return current_row
 
 print(getRow(3))
 print(getRow(0))

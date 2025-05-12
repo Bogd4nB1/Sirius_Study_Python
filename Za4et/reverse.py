@@ -5,11 +5,12 @@
 то поменяйте местами первые k символов, а остальные оставьте исходными.
 '''
 
-def reverseStr(s, k):
-    s = list(s)
-    for i in range(0, len(s), 2 * k):
-        s[i:i + k] = reversed(s[i:i + k]) # reversed() возвращает итератор, поэтому лучше чем s[::-1]
-    return ''.join(s)
+def reverseStr(input_string, chunk_size):
+    chars = list(input_string)
+    for i in range(0, len(chars), 2 * chunk_size):
+        # Переворачиваем первые k символов каждого 2k блока
+        chars[i:i + chunk_size] = reversed(chars[i:i + chunk_size])
+    return ''.join(chars)
 
 print(reverseStr("abcdefg", 2))
 print(reverseStr("abcd", 2))
